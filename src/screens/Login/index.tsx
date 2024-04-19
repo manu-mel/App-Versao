@@ -15,7 +15,12 @@ const Login = ({ navigation }: DrawerScreenProps<AppRoutesProps, 'Login'>) => {
         <Input label={'Usuário'} />
         <Input label={'Senha'} secureTextEntry />
 
-        <Button label={'Entrar'} onPress={() => navigation.navigate('Home')} />
+        <Button
+          label={'Entrar'}
+          onPress={() =>
+            navigation.navigate('Home', { caption: 'Início', isSignedIn: true })
+          }
+        />
       </Container>
       <TextVersion>v 1.0.0</TextVersion>
     </>
