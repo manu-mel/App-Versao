@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { DrawerRoutes } from './drawer';
+import { DrawerRoutes, DrawerLogin } from './drawer';
 
 export function Routes() {
+  const login = true;
   return (
     <NavigationContainer>
-      <DrawerRoutes />
+      {login ? <DrawerRoutes /> : <DrawerLogin />}
     </NavigationContainer>
   );
 }

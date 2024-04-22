@@ -14,7 +14,7 @@ const Drawer = createDrawerNavigator<AppRoutesProps>();
 export function DrawerRoutes() {
   return (
     <Drawer.Navigator
-      initialRouteName="Login"
+      initialRouteName="Home"
       screenOptions={{
         headerTitle: '',
         drawerPosition: 'right',
@@ -39,6 +39,25 @@ export function DrawerRoutes() {
         }}
       />
 
+      <Drawer.Screen
+        name="Login"
+        component={Login}
+        options={{
+          title: 'Entrar',
+          unmountOnBlur: true,
+        }}
+      />
+    </Drawer.Navigator>
+  );
+}
+
+export function DrawerLogin() {
+  return (
+    <Drawer.Navigator
+      initialRouteName="Login"
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Drawer.Screen
         name="Login"
         component={Login}
