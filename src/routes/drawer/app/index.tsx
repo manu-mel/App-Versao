@@ -4,10 +4,9 @@ import {
   DrawerToggleButton,
   createDrawerNavigator,
 } from '@react-navigation/drawer';
-import Home from '../../screens/Home';
-import Login from '../../screens/Login';
-import { AppRoutesProps } from '../../types/routes';
-import Profile from '../../screens/Profile';
+import Home from '../../../screens/Home';
+import { AppRoutesProps } from '../../../types/routes';
+import Profile from '../../../screens/Profile';
 
 const Drawer = createDrawerNavigator<AppRoutesProps>();
 
@@ -35,34 +34,6 @@ export function DrawerRoutes() {
         component={Profile}
         options={{
           title: 'Minha Conta',
-          unmountOnBlur: true,
-        }}
-      />
-
-      <Drawer.Screen
-        name="Login"
-        component={Login}
-        options={{
-          title: 'Entrar',
-          unmountOnBlur: true,
-        }}
-      />
-    </Drawer.Navigator>
-  );
-}
-
-export function DrawerLogin() {
-  return (
-    <Drawer.Navigator
-      initialRouteName="Login"
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <Drawer.Screen
-        name="Login"
-        component={Login}
-        options={{
-          title: 'Entrar',
           unmountOnBlur: true,
         }}
       />

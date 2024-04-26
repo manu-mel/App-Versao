@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { DrawerRoutes, DrawerLogin } from './drawer';
+import { DrawerRoutes } from './drawer/app';
+import { DrawerLogin } from './drawer/auth';
 
 export function Routes() {
   const login = true;
