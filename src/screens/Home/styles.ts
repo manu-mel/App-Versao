@@ -11,7 +11,7 @@ export const ProductBox = styled.TouchableOpacity`
 `;
 
 export const ContainerBox = styled.View`
-  height: 25%;
+  height: 90%;
   display: flex;
   flex-direction: row;
 `;
@@ -25,4 +25,16 @@ export const ImageBox = styled.Image`
 export const LabelBox = styled.Text`
   color: black;
   font-weight: strong;
+  padding: 4px;
+`;
+
+export const ContainerScrollView = styled.View`
+  height: 100%;
+`;
+
+export const LabelCategorybox = styled.Text`
+  color: black;
+  font-weight: strong;
+  margin-left: 15px;
+  text-transform: capitalize;
 `;
