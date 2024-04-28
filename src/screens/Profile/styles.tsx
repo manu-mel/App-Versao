@@ -10,12 +10,6 @@ export const Label = styled.Text`
   display: flex;
   text-align: center;
   font-size: 25px;
-  color: black;
+  color: ${({ theme }) => theme.colors.labelBox};
   margin-bottom: 10px;
-`;
-
-export const TextVersion = styled.Text`
-  display: flex;
-  text-align: center;
-  color: #b2b2b2;
 `;

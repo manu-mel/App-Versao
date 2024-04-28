@@ -13,7 +13,7 @@ export const Label = styled.Text`
   text-align: center;
   font-weight: bold;
   font-size: 17px;
-  color: white;
+  color: ${({ theme }) => theme.colors.labelButton};
 `;
 
 export const Container = styled.View`

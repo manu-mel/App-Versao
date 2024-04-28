@@ -20,7 +20,7 @@ export const InputContainer = styled.View`
   height: 36px;
   border: 1px solid #bbbbbb;
   border-radius: 9px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.inputBackground};
   box-shadow: none;
 `;
 

@@ -56,8 +56,11 @@ const Home = () => {
       <ContainerScrollView>
         {categories.map((category, index) => (
           <>
-            <LabelCategorybox>{category}</LabelCategorybox>
-            <ScrollView horizontal key={category}>
+            <LabelCategorybox key={category}>{category}</LabelCategorybox>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              key={index}>
               <ContainerBox key={category}>
                 {products[index]?.map(product => (
                   <ProductBox key={product.id}>
