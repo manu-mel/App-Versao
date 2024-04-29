@@ -10,17 +10,20 @@ import {
   LabelCategorybox,
   ProductBox,
 } from './styles';
+import { DrawerScreenProps } from '@react-navigation/drawer';
+import { AppRoutesProps } from '../../types/routes';
 
-interface Product {
+export interface IProduct {
   id: string;
   title: string;
   price: string;
   category: string;
   image: string;
+  description: string;
 }
 
-const Home = () => {
-  const [products, setProducts] = useState<Array<Product[]>>([]);
+const Home = ({ navigation }: DrawerScreenProps<AppRoutesProps, 'Home'>) => {
+  const [products, setProducts] = useState<Array<IProduct[]>>([]);
   const [categories, setCategories] = useState<string[]>([]);
 
   const handleLoadScreen = async () => {
@@ -33,7 +36,7 @@ const Home = () => {
       const categoryProductsPromises = categoryNames.map(
         async (category: string) => {
           const response = await api.get(`/products/category/${category}`);
-          return response.data.map((item: Product) => ({
+          return response.data.map((item: IProduct) => ({
             id: item.id,
             title: item.title,
             price: item.price,
@@ -47,6 +50,11 @@ const Home = () => {
     } catch (error: any) {
       Alert.alert(error.message);
     }
+  };
+
+  const handleProductClick = (id: string) => {
+    console.log(id);
+    navigation.navigate('Product', { productId: id });
   };
 
   useEffect(() => {
@@ -65,7 +73,9 @@ const Home = () => {
               key={index}>
               <ContainerBox key={category}>
                 {products[index]?.map(product => (
-                  <ProductBox key={product.id}>
+                  <ProductBox
+                    key={product.id}
+                    onPress={() => handleProductClick(product.id)}>
                     <ImageBox
                       source={{
                         uri: product.image,

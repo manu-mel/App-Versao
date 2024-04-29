@@ -31,7 +31,7 @@ export const ProductBox = styled.TouchableOpacity`
 
 export const ImageBox = styled.Image`
   height: 60%;
-  width: 70%;
+  width: 80%;
   border-radius: 5px;
 `;
 
