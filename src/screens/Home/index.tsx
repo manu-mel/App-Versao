@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import api from '../../services/api';
-import Button from '../../components/Button';
+import React, { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import api from '../../services/api';
 import {
   ContainerBox,
   ContainerScrollView,
@@ -10,7 +10,6 @@ import {
   LabelCategorybox,
   ProductBox,
 } from './styles';
-import { ScrollView } from 'react-native-gesture-handler';
 
 interface Product {
   id: string;
@@ -50,9 +49,12 @@ const Home = () => {
     }
   };
 
+  useEffect(() => {
+    handleLoadScreen();
+  }, []);
+
   return (
     <>
-      <Button label={'Consultar'} onPress={handleLoadScreen} />
       <ContainerScrollView>
         {categories.map((category, index) => (
           <>

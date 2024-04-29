@@ -1,6 +1,6 @@
 import React from 'react';
-import { ComponentButton, Container, Label } from './styles';
 import { TouchableOpacityProps } from 'react-native';
+import { ComponentButton, Container, Label } from './styles';
 
 interface Props extends TouchableOpacityProps {
   label: string;

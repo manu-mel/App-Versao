@@ -2,13 +2,13 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   display: flex;
-  height: 55px;
+  height: 65px;
   margin-bottom: 10px;
   align-items: center;
 `;
 
 export const Label = styled.Text`
-  font-size: 14px;
+  font-size: 18px;
   width: 90%;
 `;
 

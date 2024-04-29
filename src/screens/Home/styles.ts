@@ -1,5 +1,24 @@
 import styled from 'styled-components/native';
 
+export const ContainerScrollView = styled.View`
+  height: 100%;
+`;
+
+// Quadro de cada item
+export const LabelCategorybox = styled.Text`
+  color: ${({ theme }) => theme.colors.labelBox};
+  font-weight: bold;
+  margin-left: 15px;
+  text-transform: capitalize;
+  font-size: 20px;
+`;
+
+export const ContainerBox = styled.View`
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+`;
+
 export const ProductBox = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.colors.productBox};
   width: 180px;
@@ -8,12 +27,6 @@ export const ProductBox = styled.TouchableOpacity`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-export const ContainerBox = styled.View`
-  height: 100%;
-  display: flex;
-  flex-direction: row;
 `;
 
 export const ImageBox = styled.Image`
@@ -27,14 +40,4 @@ export const LabelBox = styled.Text`
   font-weight: strong;
   padding: 4px;
 `;
-
-export const ContainerScrollView = styled.View`
-  height: 100%;
-`;
-
-export const LabelCategorybox = styled.Text`
-  color: ${({ theme }) => theme.colors.labelBox};
-  font-weight: strong;
-  margin-left: 15px;
-  text-transform: capitalize;
-`;
+//-----

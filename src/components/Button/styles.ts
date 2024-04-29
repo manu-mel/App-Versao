@@ -1,5 +1,13 @@
 import styled from 'styled-components/native';
 
+export const Container = styled.View`
+  width: 100%;
+  margin: 5px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const ComponentButton = styled.TouchableOpacity`
   display: flex;
   padding: 9px;
@@ -12,14 +20,6 @@ export const ComponentButton = styled.TouchableOpacity`
 export const Label = styled.Text`
   text-align: center;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 20px;
   color: ${({ theme }) => theme.colors.labelButton};
-`;
-
-export const Container = styled.View`
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 5px 0;
 `;

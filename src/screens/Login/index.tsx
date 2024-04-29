@@ -1,8 +1,7 @@
 import React from 'react';
-
 import Input from '../../components/Input';
-import { Container, Label, TextVersion } from './styles';
 import Button from '../../components/Button';
+import { Container, Label, TextVersion } from './styles';
 
 const Login = () => {
   return (

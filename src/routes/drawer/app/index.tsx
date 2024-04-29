@@ -15,7 +15,6 @@ export function DrawerRoutes() {
     <Drawer.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerTitle: '',
         drawerPosition: 'right',
         headerLeft: () => undefined,
         headerRight: () => <DrawerToggleButton />,
@@ -24,7 +23,8 @@ export function DrawerRoutes() {
         name="Home"
         component={Home}
         options={{
-          title: 'Início',
+          title: 'Home',
+          headerTitleAlign: 'center',
           unmountOnBlur: true,
         }}
       />
@@ -33,7 +33,8 @@ export function DrawerRoutes() {
         name="Profile"
         component={Profile}
         options={{
-          title: 'Minha Conta',
+          title: 'My Profile',
+          headerTitleAlign: 'center',
           unmountOnBlur: true,
         }}
       />
