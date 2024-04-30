@@ -13,6 +13,7 @@ import {
   LabelEmpty,
   ProductDescription,
 } from './styles';
+import formatPrice from '../../services/formatter';
 
 const Product = ({ route }: DrawerScreenProps<AppRoutesProps, 'Product'>) => {
   const productId = route.params?.productId;
@@ -44,7 +45,7 @@ const Product = ({ route }: DrawerScreenProps<AppRoutesProps, 'Product'>) => {
               }}
             />
             <Label>{product?.title}</Label>
-            <Label>R$ {product?.price}</Label>
+            <Label>R$ {formatPrice(product.price.toString())}</Label>
             <ProductDescription>
               <Bold>Product Description: </Bold>
               {product?.description}
