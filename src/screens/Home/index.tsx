@@ -12,6 +12,7 @@ import {
 } from './styles';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { AppRoutesProps } from '../../types/routes';
+import formatPrice from '../../services/formatter';
 
 export interface IProduct {
   id: string;
@@ -82,7 +83,9 @@ const Home = ({ navigation }: DrawerScreenProps<AppRoutesProps, 'Home'>) => {
                       }}
                     />
                     <LabelBox numberOfLines={1}>{product.title}</LabelBox>
-                    <LabelBox numberOfLines={1}>R$ {product.price}</LabelBox>
+                    <LabelBox numberOfLines={1}>
+                      U$ {formatPrice(product.price.toString())}
+                    </LabelBox>
                   </ProductBox>
                 ))}
               </ContainerBox>

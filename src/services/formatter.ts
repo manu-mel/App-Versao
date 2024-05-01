@@ -9,7 +9,7 @@ const formatPrice = (price: string) => {
     return (price += '.00');
   } else {
     // R$ XX.X
-    if (price.substring(separator, separator + 2).length === 2) {
+    if (price.substring(separator + 1, separator + 3).length < 2) {
       return (price += '0');
     }
     // R$ XX.XX
