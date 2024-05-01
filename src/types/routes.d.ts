@@ -3,4 +3,5 @@ export type AppRoutesProps = {
   Login: undefined;
   Profile: undefined;
   Product: { productId: string };
+  Cart: { productId: string };
 };

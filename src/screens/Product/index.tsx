@@ -14,8 +14,12 @@ import {
   ProductDescription,
 } from './styles';
 import formatPrice from '../../services/formatter';
+import Button from '../../components/Button';
 
-const Product = ({ route }: DrawerScreenProps<AppRoutesProps, 'Product'>) => {
+const Product = ({
+  route,
+  navigation,
+}: DrawerScreenProps<AppRoutesProps, 'Product'>) => {
   const productId = route.params?.productId;
   const [product, setProduct] = useState<IProduct>();
 
@@ -50,6 +54,12 @@ const Product = ({ route }: DrawerScreenProps<AppRoutesProps, 'Product'>) => {
               <Bold>Product Description: </Bold>
               {product?.description}
             </ProductDescription>
+            <Button
+              label="Add to cart"
+              onPress={() =>
+                navigation.navigate('Cart', { productId: product.id })
+              }
+            />
           </Container>
         </ScrollView>
       ) : (

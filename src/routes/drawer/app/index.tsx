@@ -8,6 +8,7 @@ import Home from '../../../screens/Home';
 import { AppRoutesProps } from '../../../types/routes';
 import Profile from '../../../screens/Profile';
 import Product from '../../../screens/Product';
+import Cart from '../../../screens/Cart';
 
 const Drawer = createDrawerNavigator<AppRoutesProps>();
 
@@ -35,6 +36,16 @@ export function DrawerRoutes() {
         component={Product}
         options={{
           title: 'Product',
+          headerTitleAlign: 'center',
+          unmountOnBlur: true,
+        }}
+      />
+
+      <Drawer.Screen
+        name="Cart"
+        component={Cart}
+        options={{
+          title: 'Cart',
           headerTitleAlign: 'center',
           unmountOnBlur: true,
         }}

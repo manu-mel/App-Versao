@@ -54,7 +54,6 @@ const Home = ({ navigation }: DrawerScreenProps<AppRoutesProps, 'Home'>) => {
   };
 
   const handleProductClick = (id: string) => {
-    console.log(id);
     navigation.navigate('Product', { productId: id });
   };
 
