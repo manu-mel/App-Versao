@@ -28,11 +28,17 @@ export const BoxImage = styled.Image`
 export const BoxTitle = styled.Text`
   font-size: 20px;
   color: ${({ theme }) => theme.colors.labelBox};
-  margin: 5px;
-  max-width: 250px;
+  margin: 5px 5px 5px 0px;
+  max-width: 265px;
   text-align: left;
 `;
 
 export const ContainerScreen = styled.View`
   height: 92%;
+`;
+
+export const SidewaysContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;

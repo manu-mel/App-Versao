@@ -5,6 +5,7 @@ import {
   BoxTitle,
   ContainerScreen,
   Label,
+  SidewaysContainer,
 } from './styles';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { AppRoutesProps } from '../../types/routes';
@@ -13,6 +14,7 @@ import { IProduct } from '../Home';
 import api from '../../services/api';
 import Button from '../../components/Button';
 import { ScrollView } from 'react-native-gesture-handler';
+import NumberInput from '../../components/NumberInput';
 
 const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Product'>) => {
   const productId = route.params?.productId;
@@ -49,6 +51,10 @@ const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Product'>) => {
               <View>
                 <BoxTitle numberOfLines={1}>{product?.title}</BoxTitle>
                 <BoxTitle>U$ {product?.price}</BoxTitle>
+                <SidewaysContainer>
+                  <BoxTitle>Total: U$ 00.00</BoxTitle>
+                  <NumberInput />
+                </SidewaysContainer>
               </View>
             </BoxProduct>
           </ScrollView>
