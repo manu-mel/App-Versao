@@ -4,4 +4,5 @@ export type AppRoutesProps = {
   Profile: undefined;
   Product: { productId: string };
   Cart: { productId: string };
+  LogOut: undefined;
 };

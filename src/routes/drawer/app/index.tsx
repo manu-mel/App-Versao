@@ -9,6 +9,7 @@ import { AppRoutesProps } from '../../../types/routes';
 import Profile from '../../../screens/Profile';
 import Product from '../../../screens/Product';
 import Cart from '../../../screens/Cart';
+import LogOut from '../../../screens/Logout';
 
 const Drawer = createDrawerNavigator<AppRoutesProps>();
 
@@ -56,6 +57,16 @@ export function DrawerRoutes() {
         component={Profile}
         options={{
           title: 'My Profile',
+          headerTitleAlign: 'center',
+          unmountOnBlur: true,
+        }}
+      />
+
+      <Drawer.Screen
+        name="LogOut"
+        component={LogOut}
+        options={{
+          title: 'Logout',
           headerTitleAlign: 'center',
           unmountOnBlur: true,
         }}
