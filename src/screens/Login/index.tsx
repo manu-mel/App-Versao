@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import { Container, Label, TextVersion } from './styles';
 import { useAuth } from '../../providers/AuthProvider';
+import { Container, Label, TextVersion } from './styles';
 
 const Login = () => {
   const [user, setUser] = useState('');

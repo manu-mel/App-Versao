@@ -1,8 +1,8 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Login from '../../../screens/Login';
 import { AppRoutesProps } from '../../../types/routes';
+import Login from '../../../screens/Login';
 
 const Drawer = createDrawerNavigator<AppRoutesProps>();
 

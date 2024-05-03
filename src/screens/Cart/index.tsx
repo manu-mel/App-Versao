@@ -1,4 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Alert, View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { DrawerScreenProps } from '@react-navigation/drawer';
+import { IProduct } from '../Home';
+import api from '../../services/api';
+import { AppRoutesProps } from '../../types/routes';
+import Button from '../../components/Button';
+import NumberInput from '../../components/NumberInput';
 import {
   BoxImage,
   BoxProduct,
@@ -7,14 +15,6 @@ import {
   Label,
   SidewaysContainer,
 } from './styles';
-import { DrawerScreenProps } from '@react-navigation/drawer';
-import { AppRoutesProps } from '../../types/routes';
-import { Alert, View } from 'react-native';
-import { IProduct } from '../Home';
-import api from '../../services/api';
-import Button from '../../components/Button';
-import { ScrollView } from 'react-native-gesture-handler';
-import NumberInput from '../../components/NumberInput';
 
 const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Cart'>) => {
   const productId = route.params?.productId;

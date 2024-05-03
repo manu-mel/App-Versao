@@ -4,8 +4,8 @@ import {
   DrawerToggleButton,
   createDrawerNavigator,
 } from '@react-navigation/drawer';
-import Home from '../../../screens/Home';
 import { AppRoutesProps } from '../../../types/routes';
+import Home from '../../../screens/Home';
 import Profile from '../../../screens/Profile';
 import Product from '../../../screens/Product';
 import Cart from '../../../screens/Cart';

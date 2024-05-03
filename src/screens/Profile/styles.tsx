@@ -12,6 +12,7 @@ export const Bold = styled.Text`
 
 export const Container = styled.View`
   border: 1px;
+  border-radius: 5px;
   margin: 0px 15px 0px 15px;
 `;
 

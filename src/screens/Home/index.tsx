@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
+import { DrawerScreenProps } from '@react-navigation/drawer';
 import { ScrollView } from 'react-native-gesture-handler';
+import { AppRoutesProps } from '../../types/routes';
 import api from '../../services/api';
+import formatPrice from '../../services/formatter';
 import {
   ContainerBox,
   ContainerScrollView,
@@ -10,9 +13,6 @@ import {
   LabelCategorybox,
   ProductBox,
 } from './styles';
-import { DrawerScreenProps } from '@react-navigation/drawer';
-import { AppRoutesProps } from '../../types/routes';
-import formatPrice from '../../services/formatter';
 
 export interface IProduct {
   id: string;

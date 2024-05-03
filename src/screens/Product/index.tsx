@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { ScrollView } from 'react-native-gesture-handler';
-import { AppRoutesProps } from '../../types/routes';
-import api from '../../services/api';
 import { IProduct } from '../Home';
+import formatPrice from '../../services/formatter';
+import api from '../../services/api';
+import { AppRoutesProps } from '../../types/routes';
+import Button from '../../components/Button';
 import {
   Bold,
   Container,
@@ -13,8 +15,6 @@ import {
   LabelEmpty,
   ProductDescription,
 } from './styles';
-import formatPrice from '../../services/formatter';
-import Button from '../../components/Button';
 
 const Product = ({
   route,

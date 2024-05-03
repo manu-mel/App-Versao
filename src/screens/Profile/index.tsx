@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Label, Title } from './styles';
 import { Alert } from 'react-native';
 import api from '../../services/api';
-import { Bold } from './styles';
+import { useAuth } from '../../providers/AuthProvider';
+import { Container, Label, Title, Bold } from './styles';
 
 interface IName {
   firstname: string;
@@ -28,6 +28,10 @@ interface IUser {
 
 const Profile = () => {
   const [user, setUser] = useState<IUser>();
+  const { authData } = useAuth();
+
+  console.log(authData?.user);
+
   const loadUser = async () => {
     try {
       const response = await api.get('/users/1');

@@ -1,10 +1,10 @@
 import React from 'react';
-import { useAuth } from '../../providers/AuthProvider';
-import { Box, Title } from './styles';
 import { Modal } from 'react-native';
-import Button from '../../components/Button';
 import { DrawerScreenProps } from '@react-navigation/drawer';
+import { useAuth } from '../../providers/AuthProvider';
+import Button from '../../components/Button';
 import { AppRoutesProps } from '../../types/routes';
+import { Box, Title } from './styles';
 
 const LogOut = ({
   navigation,
