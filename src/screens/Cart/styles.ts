@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 
 export const Label = styled.Text`
-  display: flex;
   text-align: center;
   font-size: 25px;
   color: ${({ theme }) => theme.colors.labelBox};
@@ -38,7 +37,6 @@ export const ContainerScreen = styled.View`
 `;
 
 export const SidewaysContainer = styled.View`
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
 `;

@@ -9,7 +9,6 @@ export const Container = styled.View`
 `;
 
 export const ComponentButton = styled.TouchableOpacity`
-  display: flex;
   padding: 9px;
   height: 45px;
   background-color: ${({ theme }) => theme.colors.button};

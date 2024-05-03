@@ -15,7 +15,6 @@ export const LabelCategorybox = styled.Text`
 
 export const ContainerBox = styled.View`
   height: 100%;
-  display: flex;
   flex-direction: row;
 `;
 
@@ -24,7 +23,6 @@ export const ProductBox = styled.TouchableOpacity`
   width: 180px;
   border-radius: 10px;
   margin: 5px;
-  display: flex;
   align-items: center;
   justify-content: center;
 `;

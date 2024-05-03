@@ -5,13 +5,11 @@ export const ScrollContent = styled.ScrollView`
 `;
 
 export const Container = styled.View`
-  display: flex;
   align-items: center;
   min-height: 100%;
 `;
 
 export const Label = styled.Text`
-  display: flex;
   text-align: center;
   font-size: 25px;
   color: ${({ theme }) => theme.colors.labelBox};
@@ -35,7 +33,6 @@ export const ProductDescription = styled.Text`
 `;
 
 export const LabelEmpty = styled.Text`
-  display: flex;
   text-align: center;
   font-size: 30px;
   color: ${({ theme }) => theme.colors.labelBox};

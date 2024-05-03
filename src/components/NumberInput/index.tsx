@@ -1,18 +1,28 @@
 import React from 'react';
 import { TextInputProps } from 'react-native';
-import { Container, InputElement, SideButton } from './styles';
+import {
+  Container,
+  InputElement,
+  SideButtonLeft,
+  SideButtonRight,
+  Symbol,
+} from './styles';
 
 interface InputProps extends TextInputProps {
-  label: string;
+  value: string;
 }
 
-const NumberInput = () => {
+const NumberInput = ({ value, ...rest }: InputProps) => {
   return (
     <>
       <Container>
-        <SideButton />
-        <InputElement />
-        <SideButton />
+        <SideButtonLeft>
+          <Symbol>-</Symbol>
+        </SideButtonLeft>
+        <InputElement keyboardType="number-pad" value={value} {...rest} />
+        <SideButtonRight>
+          <Symbol>+</Symbol>
+        </SideButtonRight>
       </Container>
     </>
   );

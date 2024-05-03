@@ -16,7 +16,7 @@ import Button from '../../components/Button';
 import { ScrollView } from 'react-native-gesture-handler';
 import NumberInput from '../../components/NumberInput';
 
-const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Product'>) => {
+const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Cart'>) => {
   const productId = route.params?.productId;
 
   const [product, setProduct] = useState<IProduct>();
@@ -53,7 +53,7 @@ const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Product'>) => {
                 <BoxTitle>U$ {product?.price}</BoxTitle>
                 <SidewaysContainer>
                   <BoxTitle>Total: U$ 00.00</BoxTitle>
-                  <NumberInput />
+                  <NumberInput value="1" />
                 </SidewaysContainer>
               </View>
             </BoxProduct>
