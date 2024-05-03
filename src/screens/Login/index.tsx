@@ -18,8 +18,8 @@ const Login = () => {
         <Input
           label={'Senha'}
           value={password}
-          secureTextEntry
           onChangeText={setPassword}
+          secureTextEntry
         />
 
         <Button label={'Entrar'} onPress={() => signIn(user, password)} />

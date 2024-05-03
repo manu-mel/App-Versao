@@ -36,7 +36,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   }
 
   async function signOut() {
-    setAuthData({ user: '', password: '' });
+    setAuthData(undefined);
   }
 
   return (

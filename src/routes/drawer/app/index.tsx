@@ -69,6 +69,7 @@ export function DrawerRoutes() {
           title: 'Logout',
           headerTitleAlign: 'center',
           unmountOnBlur: true,
+          headerShown: false,
         }}
       />
     </Drawer.Navigator>

@@ -10,6 +10,7 @@ export const Label = styled.Text`
   font-size: 25px;
   color: ${({ theme }) => theme.colors.labelBox};
   margin-bottom: 10px;
+  font-weight: bold;
 `;
 
 export const TextVersion = styled.Text`

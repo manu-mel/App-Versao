@@ -80,9 +80,12 @@ const Home = ({ navigation }: DrawerScreenProps<AppRoutesProps, 'Home'>) => {
                       source={{
                         uri: product.image,
                       }}
+                      key={product.image}
                     />
-                    <LabelBox numberOfLines={1}>{product.title}</LabelBox>
-                    <LabelBox numberOfLines={1}>
+                    <LabelBox key={product.title} numberOfLines={1}>
+                      {product.title}
+                    </LabelBox>
+                    <LabelBox key={product.price} numberOfLines={1}>
                       U$ {formatPrice(product.price.toString())}
                     </LabelBox>
                   </ProductBox>

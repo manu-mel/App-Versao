@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextInputProps } from 'react-native';
 import {
   Container,
@@ -13,15 +13,34 @@ interface InputProps extends TextInputProps {
 }
 
 const NumberInput = ({ value, ...rest }: InputProps) => {
+  const [qty, setQty] = useState(value);
+
+  const handlePlus = () => {
+    let number = parseFloat(qty);
+    number += 1;
+
+    setQty(number.toString());
+  };
+
+  const handleMinus = () => {
+    let number = parseFloat(qty);
+    if (number === 0) {
+      return;
+    }
+    number -= 1;
+
+    setQty(number.toString());
+  };
+
   return (
     <>
       <Container>
         <SideButtonLeft>
-          <Symbol>-</Symbol>
+          <Symbol onPress={handleMinus}>-</Symbol>
         </SideButtonLeft>
-        <InputElement keyboardType="number-pad" value={value} {...rest} />
+        <InputElement keyboardType="number-pad" value={qty} {...rest} />
         <SideButtonRight>
-          <Symbol>+</Symbol>
+          <Symbol onPress={handlePlus}>+</Symbol>
         </SideButtonRight>
       </Container>
     </>

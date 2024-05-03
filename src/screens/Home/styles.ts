@@ -4,7 +4,6 @@ export const ContainerScrollView = styled.View`
   height: 100%;
 `;
 
-// Quadro de cada item
 export const LabelCategorybox = styled.Text`
   color: ${({ theme }) => theme.colors.labelBox};
   font-weight: bold;
@@ -38,4 +37,3 @@ export const LabelBox = styled.Text`
   font-weight: strong;
   padding: 4px;
 `;
-//-----

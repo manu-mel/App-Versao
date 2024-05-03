@@ -39,28 +39,33 @@ const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Cart'>) => {
   return (
     <>
       <View>
-        <ContainerScreen>
-          <ScrollView>
-            <Label>Finish purchasing your items!</Label>
-            <BoxProduct>
-              <BoxImage
-                source={{
-                  uri: product?.image,
-                }}
-              />
-              <View>
-                <BoxTitle numberOfLines={1}>{product?.title}</BoxTitle>
-                <BoxTitle>U$ {product?.price}</BoxTitle>
-                <SidewaysContainer>
-                  <BoxTitle>Total: U$ 00.00</BoxTitle>
-                  <NumberInput value="1" />
-                </SidewaysContainer>
-              </View>
-            </BoxProduct>
-          </ScrollView>
-        </ContainerScreen>
-
-        <Button label="Purchase" />
+        {productId ? (
+          <>
+            <ContainerScreen>
+              <ScrollView>
+                <Label>Finish purchasing your items!</Label>
+                <BoxProduct>
+                  <BoxImage
+                    source={{
+                      uri: product?.image,
+                    }}
+                  />
+                  <View>
+                    <BoxTitle numberOfLines={1}>{product?.title}</BoxTitle>
+                    <BoxTitle>U$ {product?.price}</BoxTitle>
+                    <SidewaysContainer>
+                      <BoxTitle>Total: U$ 00.00</BoxTitle>
+                      <NumberInput value={'1'} />
+                    </SidewaysContainer>
+                  </View>
+                </BoxProduct>
+              </ScrollView>
+            </ContainerScreen>
+            <Button label="Purchase" />
+          </>
+        ) : (
+          <Label>No items in this cart, keep shopping!</Label>
+        )}
       </View>
     </>
   );
