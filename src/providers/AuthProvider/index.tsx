@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { ReactNode, createContext, useContext, useState } from 'react';
 import { Alert } from 'react-native';
 import api from '../../services/api';
 
@@ -12,24 +12,26 @@ interface AuthContextData {
   signOut: () => Promise<void>;
 }
 
+interface AuthProps {
+  children: ReactNode;
+}
+
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
-export const AuthProvider: React.FC = ({ children }) => {
+export const AuthProvider = ({ children }: AuthProps) => {
   const [authData, setAuthData] = useState<AuthData>();
 
   async function signIn(user: string, password: string) {
     try {
-      // const body = JSON.stringify({
-      //   username: user,
-      //   password: password,
-      // });
+      const body = JSON.stringify({
+        username: user,
+        password: password,
+      });
 
-      // const response = await api.post('/auth/login', body);
-      // const data = response.data;
-      if (user === 'a' && password === 'a') {
-        const data = { user, password };
-        setAuthData(data);
-      }
+      const response = await api.post('/auth/login', body);
+      const data = response.data;
+
+      setAuthData(data);
     } catch (error: any) {
       Alert.alert(error.message);
     }
