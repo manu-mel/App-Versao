@@ -3,6 +3,7 @@ import { Alert } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { ScrollView } from 'react-native-gesture-handler';
 import { AppRoutesProps } from '../../types/routes';
+import { IProduct } from '../../types/home';
 import api from '../../services/api';
 import formatPrice from '../../services/formatter';
 import {
@@ -13,15 +14,6 @@ import {
   LabelCategorybox,
   ProductBox,
 } from './styles';
-
-export interface IProduct {
-  id: string;
-  title: string;
-  price: string;
-  category: string;
-  image: string;
-  description: string;
-}
 
 const Home = ({ navigation }: DrawerScreenProps<AppRoutesProps, 'Home'>) => {
   const [products, setProducts] = useState<Array<IProduct[]>>([]);
@@ -65,13 +57,13 @@ const Home = ({ navigation }: DrawerScreenProps<AppRoutesProps, 'Home'>) => {
     <>
       <ContainerScrollView>
         {categories.map((category, index) => (
-          <>
-            <LabelCategorybox key={category}>{category}</LabelCategorybox>
+          <React.Fragment key={category}>
+            <LabelCategorybox>{category}</LabelCategorybox>
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
               key={index}>
-              <ContainerBox key={category}>
+              <ContainerBox>
                 {products[index]?.map(product => (
                   <ProductBox
                     key={product.id}
@@ -80,19 +72,16 @@ const Home = ({ navigation }: DrawerScreenProps<AppRoutesProps, 'Home'>) => {
                       source={{
                         uri: product.image,
                       }}
-                      key={product.image}
                     />
-                    <LabelBox key={product.title} numberOfLines={1}>
-                      {product.title}
-                    </LabelBox>
-                    <LabelBox key={product.price} numberOfLines={1}>
+                    <LabelBox numberOfLines={1}>{product.title}</LabelBox>
+                    <LabelBox numberOfLines={1}>
                       U$ {formatPrice(product.price.toString())}
                     </LabelBox>
                   </ProductBox>
                 ))}
               </ContainerBox>
             </ScrollView>
-          </>
+          </React.Fragment>
         ))}
       </ContainerScrollView>
     </>

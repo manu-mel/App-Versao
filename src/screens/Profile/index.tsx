@@ -1,36 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
 import api from '../../services/api';
-import { useAuth } from '../../providers/AuthProvider';
 import { Container, Label, Title, Bold } from './styles';
-
-interface IName {
-  firstname: string;
-  lastname: string;
-}
-
-interface IAddress {
-  city: string;
-  street: string;
-  number: number;
-  zipcode: string;
-}
-
-interface IUser {
-  id: number;
-  email: string;
-  username: string;
-  password: string;
-  name: IName;
-  address: IAddress;
-  phone: string;
-}
+import { IUser } from '../../types/profile';
 
 const Profile = () => {
   const [user, setUser] = useState<IUser>();
-  const { authData } = useAuth();
-
-  console.log(authData?.user);
 
   const loadUser = async () => {
     try {
@@ -45,7 +20,7 @@ const Profile = () => {
 
   useEffect(() => {
     loadUser();
-  }, []);
+  });
 
   return (
     <>

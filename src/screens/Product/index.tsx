@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { ScrollView } from 'react-native-gesture-handler';
-import { IProduct } from '../Home';
+import { IProduct } from '../../types/home';
 import formatPrice from '../../services/formatter';
 import api from '../../services/api';
 import { AppRoutesProps } from '../../types/routes';
