@@ -4,7 +4,7 @@ import { DrawerScreenProps } from '@react-navigation/drawer';
 import { useAuth } from '../../providers/AuthProvider';
 import Button from '../../components/Button';
 import { AppRoutesProps } from '../../types/routes';
-import { Box, Title } from './styles';
+import { Background, Box, Title } from './styles';
 
 const LogOut = ({
   navigation,
@@ -15,19 +15,21 @@ const LogOut = ({
     <>
       <Modal animationType="fade" transparent>
         <Box>
-          <Title>Do you want to log out of this account?</Title>
-          <Button
-            label="Log Out"
-            onPress={() => {
-              signOut();
-            }}
-          />
-          <Button
-            label="Cancel"
-            onPress={() => {
-              navigation.goBack();
-            }}
-          />
+          <Background>
+            <Title>Do you want to log out of this account?</Title>
+            <Button
+              label="Log Out"
+              onPress={() => {
+                signOut();
+              }}
+            />
+            <Button
+              label="Cancel"
+              onPress={() => {
+                navigation.goBack();
+              }}
+            />
+          </Background>
         </Box>
       </Modal>
     </>

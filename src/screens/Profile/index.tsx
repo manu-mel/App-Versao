@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
 import api from '../../services/api';
-import { Container, Label, Title, Bold } from './styles';
 import { IUser } from '../../types/profile';
+import { Container, Label, Title, Bold } from './styles';
 
 const Profile = () => {
   const [user, setUser] = useState<IUser>();

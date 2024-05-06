@@ -9,17 +9,21 @@ import {
 } from './styles';
 
 interface InputProps extends TextInputProps {
-  value: string;
+  onChangeText: (a: string) => void;
 }
 
-const NumberInput = ({ value, ...rest }: InputProps) => {
-  const [qty, setQty] = useState(value);
+const NumberInput = ({ onChangeText, ...rest }: InputProps) => {
+  const [qty, setQty] = useState('1');
 
   const handlePlus = () => {
     let number = parseFloat(qty);
     number += 1;
 
     setQty(number.toString());
+
+    if (onChangeText) {
+      onChangeText(number.toString());
+    }
   };
 
   const handleMinus = () => {
@@ -30,6 +34,10 @@ const NumberInput = ({ value, ...rest }: InputProps) => {
     number -= 1;
 
     setQty(number.toString());
+
+    if (onChangeText) {
+      onChangeText(number.toString());
+    }
   };
 
   return (

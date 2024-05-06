@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Alert, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { DrawerScreenProps } from '@react-navigation/drawer';
-import { IProduct } from '../Home';
-import api from '../../services/api';
+import { IProduct } from '../../types/home';
 import { AppRoutesProps } from '../../types/routes';
 import Button from '../../components/Button';
 import NumberInput from '../../components/NumberInput';
+import api from '../../services/api';
 import {
   BoxImage,
   BoxProduct,
@@ -20,6 +20,7 @@ const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Cart'>) => {
   const productId = route.params?.productId;
 
   const [product, setProduct] = useState<IProduct>();
+  const [itemPrice, setItemPrice] = useState(0);
 
   const handleLoadItems = async () => {
     try {
@@ -27,6 +28,7 @@ const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Cart'>) => {
       const data = response.data;
 
       setProduct(data);
+      setItemPrice(response.data.price);
     } catch (error: any) {
       Alert.alert(error.message);
     }
@@ -35,6 +37,13 @@ const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Cart'>) => {
   useEffect(() => {
     handleLoadItems();
   });
+
+  const handleChange = (qty: string) => {
+    const iQty = parseFloat(qty) || 0;
+    const newValue = iQty * itemPrice;
+
+    setItemPrice(newValue);
+  };
 
   return (
     <>
@@ -54,8 +63,12 @@ const Cart = ({ route }: DrawerScreenProps<AppRoutesProps, 'Cart'>) => {
                     <BoxTitle numberOfLines={1}>{product?.title}</BoxTitle>
                     <BoxTitle>U$ {product?.price}</BoxTitle>
                     <SidewaysContainer>
-                      <BoxTitle>Total: U$ 00.00</BoxTitle>
-                      <NumberInput value={'1'} />
+                      <BoxTitle>Total: U$ </BoxTitle>
+                      <NumberInput
+                        onChangeText={value => {
+                          handleChange(value);
+                        }}
+                      />
                     </SidewaysContainer>
                   </View>
                 </BoxProduct>
